@@ -40,14 +40,15 @@ Run the next commands to move related config files to the config folder and make
 cd ~/..
 
 # move config files and run deepstream app for generating tensorrt engines
-git clone https://github.com/AshishSardana/ds_triton.git
+git clone https://github.com/shokoufeh-monjezi/deepstream_example.git
 
-cp /ds_triton/engine_bs/config_infer_primary_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/config_infer_primary_trafficcamnet.txt
+cp /deepstream_example/engine_bs/config_infer_primary_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/config_infer_primary_trafficcamnet.txt
 
-cp /ds_triton/engine_bs/deepstream_app_source1_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
+cp /deepstream_example/engine_bs/deepstream_app_source1_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
 
 
 deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
+
 
 ```
 
@@ -67,12 +68,13 @@ cd /opt/nvidia/deepstream/deepstream-5.1/samples/
 mkdir -p trtis_model_repo/trafficcamnet/1
 cp models/tlt_pretrained_models/trafficcamnet/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine trtis_model_repo/trafficcamnet/1/resnet18_trafficcamnet_pruned.etlt_b50_gpu0_int8.engine
 
-cp /ds_triton/trafficcamnet_config.pbtxt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/trafficcamnet/config.pbtxt
+cp /deepstream_example/trafficcamnet_config.pbtxt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/trafficcamnet/config.pbtxt
 
-cp /ds_triton/labels_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/trafficcamnet/labels.txt
+cp /deepstream_example/labels_trafficcamnet.txt /opt/nvidia/deepstream/deepstream-5.1/samples/trtis_model_repo/trafficcamnet/labels.txt
 
 # move the model and app config file of the use-case
-cp /ds_triton/config/config_infer_primary_trafficcamnet_triton.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_primary_trafficcamnet_triton.txt
+cp /deepstream_example/config/config_infer_primary_trafficcamnet_triton.txt /opt/nvidia/deepstream/deepstream-5.1/samples/configs/deepstream-app-trtis/config_infer_primary_trafficcamnet_triton.txt
+
 
 ```
 
@@ -82,4 +84,4 @@ cp /ds_triton/config/config_infer_primary_trafficcamnet_triton.txt /opt/nvidia/d
 deepstream-app -c /opt/nvidia/deepstream/deepstream-5.1/samples/configs/tlt_pretrained_models/deepstream_app_source1_trafficcamnet.txt
 ```
 
-The result can be seen in the root directory as a mp4 video with the name final4.mp4.
+The result can be seen in the samples directory ( /opt/nvidia/deepstream/deepstream-5.1/samples)as a mp4 video named final4.mp4.
