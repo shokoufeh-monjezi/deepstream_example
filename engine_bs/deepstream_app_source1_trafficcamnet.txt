@@ -58,7 +58,7 @@ gpu-id=0
 nvbuf-memory-type=0
 
 [osd]
-enable=0
+enable=1
 gpu-id=0
 border-width=3
 text-size=15
